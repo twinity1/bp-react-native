@@ -3,6 +3,7 @@ import React from 'react';
 
 import { Button, Modal, SafeAreaView, Text, TouchableWithoutFeedback, View } from "react-native";
 import Camera from "./Camera";
+import Storage from "./Storage";
 
 export default class AppInner extends React.Component {
   state = {
@@ -33,6 +34,17 @@ export default class AppInner extends React.Component {
             <SafeAreaView style={{width: '100%', height: '100%'}}>
               <Button onPress={this.showModal.bind(this, null)} title="Close" />
               <Camera/>
+            </SafeAreaView>
+          </Modal>
+          <Button title="Storage" onPress={this.showModal.bind(this, 'storage')} />
+          <Modal
+            presentationStyle="pageSheet"
+            animationType="slide"
+            transparent={false}
+            visible={currentModal === 'storage'}>
+            <SafeAreaView style={{width: '100%', height: '100%'}}>
+              <Button onPress={this.showModal.bind(this, null)} title="Close" />
+              <Storage />
             </SafeAreaView>
           </Modal>
       </>
