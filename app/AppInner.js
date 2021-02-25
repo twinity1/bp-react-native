@@ -4,6 +4,7 @@ import React from 'react';
 import { Button, Modal, SafeAreaView, Text, TouchableWithoutFeedback, View } from "react-native";
 import Camera from "./Camera";
 import Storage from "./Storage";
+import Biometrics from "./Biometrics";
 
 export default class AppInner extends React.Component {
   state = {
@@ -45,6 +46,17 @@ export default class AppInner extends React.Component {
             <SafeAreaView style={{width: '100%', height: '100%'}}>
               <Button onPress={this.showModal.bind(this, null)} title="Close" />
               <Storage />
+            </SafeAreaView>
+          </Modal>
+          <Button title="Biometrics" onPress={this.showModal.bind(this, 'biometrics')} />
+          <Modal
+            presentationStyle="pageSheet"
+            animationType="slide"
+            transparent={false}
+            visible={currentModal === 'biometrics'}>
+            <SafeAreaView style={{width: '100%', height: '100%'}}>
+              <Button onPress={this.showModal.bind(this, null)} title="Close" />
+              <Biometrics />
             </SafeAreaView>
           </Modal>
       </>
