@@ -14,7 +14,8 @@
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-biometrics": "^2.1.4",
-    "react-native-camera": "^3.42.2"
+    "react-native-camera": "^3.42.2",
+    "react-native-notifications": "^3.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.17",
