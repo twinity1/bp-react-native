@@ -6,6 +6,7 @@ import Camera from "./Camera";
 import Storage from "./Storage";
 import Biometrics from "./Biometrics";
 import Notification from "./Notification";
+import Geo from "./Geo";
 
 export default class AppInner extends React.Component {
   state = {
@@ -71,6 +72,17 @@ export default class AppInner extends React.Component {
               <Notification />
             </SafeAreaView>
           </Modal>
+        <Button title="Geo location" onPress={this.showModal.bind(this, 'geo')} />
+        <Modal
+          presentationStyle="pageSheet"
+          animationType="slide"
+          transparent={false}
+          visible={currentModal === 'geo'}>
+          <SafeAreaView style={{width: '100%', height: '100%'}}>
+            <Button onPress={this.showModal.bind(this, null)} title="Close" />
+            <Geo />
+          </SafeAreaView>
+        </Modal>
       </>
     )
   }
